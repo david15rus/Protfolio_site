@@ -13,3 +13,8 @@ with col2:
     Something about me 
     """
     st.info(content)
+
+content = """
+Below you can find some of the apps I have built in Python. Feel free to contact me!
+"""
+st.write(content)
