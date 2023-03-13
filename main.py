@@ -15,18 +15,23 @@ with col2:
     """
     st.info(content)
 
-col3, col4 = st.columns(2)
+col3, empty_col,  col4 = st.columns([1.5, 0.5, 1.5])
 
 df = pandas.read_csv('data.csv', sep=';')
+
 with col3:
     for idx, row in df[:10].iterrows():
         st.header(row['Title'])
-        st.text(row['Descriptions'])
+        st.write(row['Descriptions'])
+        st.image('images/' + row['Image'])
+        st.write(f"[Source code]({row['Url']})")
 
 with col4:
     for idx, row in df[10:].iterrows():
         st.header(row['Title'])
-        st.text(row['Descriptions'])
+        st.write(row['Descriptions'])
+        st.image('images/' + row['Image'])
+        st.write(f"[Source code]({row['Url']})")
 
 content = """
 Below you can find some of the apps I have built in Python. Feel free to contact me!
